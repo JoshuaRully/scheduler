@@ -7,7 +7,7 @@ export default function InterviewerListItem(props) {
     "interviewers__item--selected": props.selected
   })
 
-  let imageStyles = classNames("interviewers__item-image", {
+  let PicStyles = classNames("interviewers__item-image", {
     "interviewers__item--selected-image": props.selected
   })
 
@@ -17,7 +17,7 @@ export default function InterviewerListItem(props) {
       onClick={props.setInterviewer}
     >
       <img
-        className={imageStyles}
+        className={PicStyles}
         src={props.avatar}
         alt={props.name}
       />
