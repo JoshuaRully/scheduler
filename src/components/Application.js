@@ -5,7 +5,7 @@ import Appointment from "./Appointment/index";
 import { getAppointmentsForDay } from "helpers/selectors";
 const axios = require("axios");
 
-export default function Application(props) {
+export default function Application() {
   const setDay = day => setState({...state, day});
   const setDays = days => setState(prev => ({ ...prev, days }));
 
@@ -15,21 +15,19 @@ export default function Application(props) {
     appointments: {}
   });
 
-  const appointments = [];
-
   Promise.all([
     Promise.resolve(axios.get('http://localhost:8001/api/days')),
     Promise.resolve(axios.get('http://localhost:8001/api/appointments'))
   ]).then((all) => {
     setState(prev => ({...prev, days: all[0].data, appointments: all[1].data}));
-  })
+  });
 
-  const appointmentObjects = getAppointmentsForDay(state, state.day)
+  const appointmentObjects = getAppointmentsForDay(state, state.day);
 
   const appointment = appointmentObjects.map((appointmentObject) => {
     return (
-        <Appointment key={appointmentObject.id} {...appointmentObject} />
-      )
+      <Appointment key={appointmentObject.id} {...appointmentObject} />
+    );
   });
 
   useEffect(() => {
@@ -64,7 +62,6 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {appointment}
-        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
