@@ -30,7 +30,7 @@ const appointments = [
     id: 2,
     time: "12pm",
     interview: {
-      student: "Eren Jaeger",
+      student: "Eren Yeager",
       interviewer: {
         id: 1,
         name: "Sylvia Palmer",
@@ -50,7 +50,7 @@ const appointments = [
     id: 4,
     time: "5pm",
     interview: {
-      student: "Lydia Miller-Jones",
+      student: "Levi Ackerman",
       interviewer: {
         id: 1,
         name: "Sylvia Palmer",
