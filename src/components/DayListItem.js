@@ -10,7 +10,7 @@ const formatSpots = spots => {
     return `${spots} spot remaining`;
   }
   return `${spots} spots remaining`;
-}
+};
 
 export default function DayListItem(props) {
   const availabilityMsg = formatSpots(props.spots);
@@ -18,10 +18,10 @@ export default function DayListItem(props) {
   let dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": !props.spots
-  })
+  });
 
   return (
-    <li 
+    <li
       className={dayClass}
       onClick={() => props.setDay(props.name)}
       data-testid="day"

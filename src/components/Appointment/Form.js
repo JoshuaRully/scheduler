@@ -5,17 +5,17 @@ import Button from "components/Button";
 export default function Form(props) {
   // states below
   const [currentName, setName] = useState(props.name || "");
-  const [currentInterviewer, setInterviewer] = useState(props.value || null)
+  const [currentInterviewer, setInterviewer] = useState(props.value || null);
 
   // helper functions below
   const reset = () => {
-    setName("")
-    setInterviewer(null)
-  }
+    setName("");
+    setInterviewer(null);
+  };
 
-  function cancel () {
+  function cancel() {
     reset();
-    props.onCancel()
+    props.onCancel();
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Form(props) {
             className="appointment__create-input text--semi-bold"
             name={props.name}
             type={props.message}
-            onChange={(event) => setName(event.target.value)}            
+            onChange={(event) => setName(event.target.value)}
             value={currentName}
             placeholder={currentName ? currentName : "Please enter your name"}
             /*
@@ -43,5 +43,5 @@ export default function Form(props) {
         </section>
       </section>
     </main>
-  )
-};
+  );
+}
