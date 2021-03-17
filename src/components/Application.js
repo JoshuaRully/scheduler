@@ -39,11 +39,11 @@ const appointments = [
     }
   },
   {
-    id: 1,
+    id: 10,
     time: "1pm",
   },
   {
-    id: 1,
+    id: 8,
     time: "3pm",
   },
   {

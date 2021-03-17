@@ -28,7 +28,7 @@ export default function Form(props) {
             type={props.message}
             onChange={(event) => setName(event.target.value)}            
             value={currentName}
-            placeholder="Enter Student Name"
+            placeholder={currentName ? currentName : "Please enter your name"}
             /*
               This must be a controlled component
             */
@@ -39,7 +39,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onSubmit={event => event.preventDefault()}>Save</Button>
+          <Button confirm onSubmit={event => event.preventDefault()} onClick={event => props.onSave(currentName, currentInterviewer)}>Save</Button>
         </section>
       </section>
     </main>
