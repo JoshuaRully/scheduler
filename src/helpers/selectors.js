@@ -2,17 +2,29 @@
 const checkIds = (appointments, ids) => {
   const check = ids.map(id => appointments[id]);
   return check;
-}
+};
 
 // check and return the appointments in the days obj that are in the appointments object
-function getAppointmentsForDay(state, day) {
+const getAppointmentsForDay = function(state, day) {
   let apptArr = [];
   state.days.map(dayObj => {
     if (dayObj.name === day) {
-      dayObj.appointments.forEach(apptId => apptArr.push(apptId))
+      dayObj.appointments.forEach(apptId => apptArr.push(apptId));
     }
-  })
+  });
   return checkIds(state.appointments, apptArr);
-}
+};
 
-module.exports = { checkIds, getAppointmentsForDay };
+const getInterview = function(state, interview) {
+  if (!interview) {
+    return null;
+  }
+
+  const interviewerInfo = state.interviewers[interview.interviewer];
+  return {
+    student: interview.student,
+    interviewer: interviewerInfo
+  };
+};
+
+module.exports = { checkIds, getAppointmentsForDay, getInterview };
