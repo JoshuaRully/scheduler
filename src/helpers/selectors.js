@@ -27,4 +27,15 @@ const getInterview = function(state, interview) {
   };
 };
 
-module.exports = { checkIds, getAppointmentsForDay, getInterview };
+function getInterviewersForDay(state, day) {
+
+  let interviewersArr = [];
+  state.days.map(dayObj => {
+    if (dayObj.name === day) {
+      dayObj.interviewers.forEach(interviewerId => interviewersArr.push(interviewerId))
+    }
+  })
+  return checkIds(state.interviewers, interviewersArr);
+}
+
+module.exports = { checkIds, getAppointmentsForDay, getInterview, getInterviewersForDay };
