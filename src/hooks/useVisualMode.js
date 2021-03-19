@@ -9,7 +9,7 @@ export default function useVisualMode(initial) {
   // allows transition to a new mode
   const transition = (newMode, replace = false) => {
     if (replace) {
-      setMode((prev) => newMode);
+      setMode((prev) => newMode)
       let replaceHistory = [...history];
       replaceHistory[replaceHistory.length - 1] = mode;
       setHistory((prev) => replaceHistory);
@@ -22,7 +22,7 @@ export default function useVisualMode(initial) {
   };
   // allows cb to return to prev mode
   const back = () => {
-    let newHistory = [...history];
+     let newHistory = [...history];
     newHistory.pop(mode);
     setHistory((prev) => newHistory);
     if (history.length > 1) {
@@ -30,5 +30,5 @@ export default function useVisualMode(initial) {
     }
   };
 
-  return { mode, transition, back };
+  return { mode, transition, back }
 }
