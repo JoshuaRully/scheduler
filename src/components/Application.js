@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment/index";
-import { getAppointmentsForDay, getInterview} from "helpers/selectors";
+import { getAppointmentsForDay, getInterview, getInterviewersForDay} from "helpers/selectors";
 const axios = require("axios");
 
 export default function Application() {
@@ -24,6 +24,7 @@ export default function Application() {
   });
 
   const appointmentObjects = getAppointmentsForDay(state, state.day);
+  const interviewers = getInterviewersForDay(state, state.day);
 
   const appointment = appointmentObjects.map((appointmentObject) => {
     const interview = getInterview(state, appointmentObjects.interview)
