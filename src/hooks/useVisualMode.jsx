@@ -1,12 +1,8 @@
 import { useState } from 'react';
-// take in an initial mode
-// set the mode state with the initial mode provided
-// return an object with a mode property
 
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
-  // allows transition to a new mode
   const transition = (newMode, replace = false) => {
     if (replace) {
       setMode((prev) => newMode)
@@ -20,7 +16,6 @@ export default function useVisualMode(initial) {
       setHistory((prev) => newHistory);
     }
   };
-  // allows cb to return to prev mode
   const back = () => {
      let newHistory = [...history];
     newHistory.pop(mode);
