@@ -70,7 +70,6 @@ export default function Appointment(props) {
   function edit() {
     transition(EDIT);
   }
-  console.log(mode)
   
   return (
 
