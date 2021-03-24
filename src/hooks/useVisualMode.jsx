@@ -24,6 +24,5 @@ export default function useVisualMode(initial) {
       setMode((prev) => newHistory[(newHistory.length - 1)]);
     }
   };
-
   return { mode, transition, back }
 }
