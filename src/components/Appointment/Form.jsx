@@ -17,7 +17,7 @@ export default function Form(props) {
   function cancel() {
     reset();
     props.onCancel();
-  }
+  };
 
   function validate() {
     if (currentName === "") {
@@ -26,7 +26,7 @@ export default function Form(props) {
     }
     setError("");
     props.onSave(currentName, currentInterviewer);
-  }
+  };
 
   return (
     <main className="appointment__card appointment__card--create">
@@ -56,4 +56,4 @@ export default function Form(props) {
       </section>
     </main>
   );
-}
+};

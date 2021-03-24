@@ -15,7 +15,7 @@ export default function useVisualMode(initial) {
       let newHistory = [...history];
       newHistory.push(newMode);
       setHistory((prev) => newHistory);
-    }
+    };
   };
   const back = () => {
      let newHistory = [...history];
@@ -23,7 +23,7 @@ export default function useVisualMode(initial) {
     setHistory((prev) => newHistory);
     if (history.length > 1) {
       setMode((prev) => newHistory[(newHistory.length - 1)]);
-    }
+    };
   };
   return { mode, transition, back }
-}
+};

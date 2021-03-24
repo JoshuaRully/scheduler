@@ -54,15 +54,15 @@ const fixtures = {
 };
 
 const apiRes = {
-  "http://localhost:8001/api/days" : fixtures.days,
-  "http://localhost:8001/api/appointments" : fixtures.appointments,
-  "http://localhost:8001/api/interviewers" : fixtures.interviewers
-}
+  "/api/days" : fixtures.days,
+  "/api/appointments" : fixtures.appointments,
+  "/api/interviewers" : fixtures.interviewers
+};
 
 const interview ={ 
   student: "Lydia Miller-Jones",
   interviewer: "Sylvia Palmer"
-}
+};
 
 // mock axios requests to interact w/ above data
 export default {
@@ -86,6 +86,6 @@ export default {
       status: 200,
       statusText: "OK",
       data: null
-    })
+    });
   })
 };

@@ -30,11 +30,11 @@ export default function Appointment(props) {
     
     if (props.interview && mode === EMPTY) {
       transition(SHOW);
-    }
+    };
     
     if (!props.interview && mode === SHOW) {
       transition(EMPTY);
-    }
+    };
 
   }, [mode, transition, props.interview])
 
@@ -51,8 +51,8 @@ export default function Appointment(props) {
       props.bookInterview(props.id, interview)
         .then(() => transition(SHOW))
         .catch(() => transition(ERROR_SAVE, true))
-    }
-  }
+    };
+  };
 
   function remove() {
 
@@ -64,16 +64,16 @@ export default function Appointment(props) {
     } else {
       transition(CONFIRM);      
     }
-  }
+  };
 
   function edit() {
     transition(EDIT);
-  }
+  };
   
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
-      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />};
       {mode === SHOW && (
         <Show
           student={props.interview.student}
@@ -81,7 +81,7 @@ export default function Appointment(props) {
           onDelete={remove}
           onEdit={edit}
         />
-      )}
+      )};
       {mode === CREATE &&
         <Form
           name={props.name}
@@ -97,7 +97,7 @@ export default function Appointment(props) {
           onCancel={back}
           onConfirm={remove}
           message="Are you sure you would like to delete?" 
-        />}
+        />};
       {mode === EDIT &&
         <Form 
           name={props.name ? props.name : props.interview.student}
@@ -106,19 +106,19 @@ export default function Appointment(props) {
           onSave={save}
           onCancel={back}
         />
-      }
+      };
       {mode === ERROR_SAVE && 
         <Error 
           message="Could not create appointment"
           onClose={back}
         />
-      }
+      };
       {mode === ERROR_DELETE && 
         <Error 
           message="Could not cancel appointment"
           onClose={back}
         />
-      }
+      };
     </article>
-  )
-}
+  );
+};
