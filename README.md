@@ -1,8 +1,15 @@
 # Interview Scheduler
 
+- Scheduler is an intuitive React web app that allows users to browse/add/edit/delete interviews
+- Once successfully installed refer to the gifs below for usage
+
 ## Setup
 
 Install dependencies with `npm install`.
+
+## API for Local Machine Use
+
+`https://github.com/JoshuaRully/scheduler-api`
 
 ## Running Webpack Development Server
 
