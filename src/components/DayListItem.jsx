@@ -2,7 +2,7 @@ import React from "react";
 import "components/DayListItem.scss";
 const classNames = require("classnames");
 
-const formatSpots = spots => {
+const updateSpots = spots => {
   if (!spots) {
     return `no spots remaining`;
   }
@@ -13,7 +13,7 @@ const formatSpots = spots => {
 };
 
 export default function DayListItem(props) {
-  const availabilityMsg = formatSpots(props.spots);
+  const availabilityMsg = updateSpots(props.spots);
 
   let dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,

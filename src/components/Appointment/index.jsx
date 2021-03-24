@@ -12,7 +12,6 @@ import 'components/Appointment/styles.scss';
 import useVisualMode from 'hooks/useVisualMode';
 
 export default function Appointment(props) {
-
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -72,7 +71,6 @@ export default function Appointment(props) {
   }
   
   return (
-
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
@@ -122,6 +120,5 @@ export default function Appointment(props) {
         />
       }
     </article>
-
   )
 }
