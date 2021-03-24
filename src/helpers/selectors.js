@@ -16,6 +16,7 @@ const getAppointmentsForDay = function(state, day) {
   return checkIds(state.appointments, apptArr);
 };
 
+// retrieves specific interview data from passed state and interview data
 const getInterview = function(state, interview) {
   if (!interview) {
     return null;
@@ -28,6 +29,7 @@ const getInterview = function(state, interview) {
   };
 };
 
+// retrieves available interviewers for specific day dependent on state
 function getInterviewersForDay(state, day) {
 
   let interviewersArr = [];

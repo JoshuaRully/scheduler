@@ -2,6 +2,7 @@ import React from "react";
 import "components/DayListItem.scss";
 const classNames = require("classnames");
 
+// grammar correct helper function
 const formatSpots = spots => {
   if (!spots) {
     return `no spots remaining`;
@@ -12,6 +13,7 @@ const formatSpots = spots => {
   return `${spots} spots remaining`;
 };
 
+// renders item depending on state of passed props
 export default function DayListItem(props) {
   const availabilityMsg = formatSpots(props.spots);
 
