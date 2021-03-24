@@ -59,6 +59,11 @@ const apiRes = {
   "http://localhost:8001/api/interviewers" : fixtures.interviewers
 }
 
+const interview ={ 
+  student: "Lydia Miller-Jones",
+  interviewer: "Sylvia Palmer"
+}
+
 export default {
   defaults: { baseURL: ""},
   get: jest.fn(url => {
@@ -67,5 +72,12 @@ export default {
       statusText: "OK",
       data: apiRes[url]
     });
+  }),
+  put: jest.fn(() => {
+    return Promise.resolve({
+      status: 200,
+      statusText: "OK",
+      data: interview
+    })
   })
 };
