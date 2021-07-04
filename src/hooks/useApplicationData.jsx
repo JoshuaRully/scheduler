@@ -9,9 +9,9 @@ export default function useApplicationData() {
     interviewers: {}
   })
 
-  // function setDay(day) {
-  //   setState({...state, day})
-  // }
+  function setDay(day) {
+    setState({...state, day})
+  }
 
   // responsible for axios requests to retrieve data
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function useApplicationData() {
   };
   return {
     state,
-    // setDay,
+    setDay,
     bookInterview,
     cancelInterview
    };
