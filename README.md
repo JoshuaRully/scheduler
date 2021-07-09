@@ -30,6 +30,8 @@ npm run storybook
 ```
 ## Final Product
 
+[Click here for a live demo!](https://scheduler-1.netlify.app/)
+
 Browse the schedule and add an interview!
 !["Add an Interview"](https://github.com/JoshuaRully/scheduler/blob/master/gifs/AddInterview.gif?raw=true)
 Edit an interview!
